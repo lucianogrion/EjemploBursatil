@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BursatilModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BursatilModelStoreContainer">
+          <EntitySet Name="Indices" EntityType="BursatilModel.Store.Indices" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Indices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Apertura" Type="float" Nullable="false" />
+          <Property Name="Mínimo" Type="float" Nullable="false" />
+          <Property Name="Máximo" Type="float" Nullable="false" />
+          <Property Name="Último" Type="float" Nullable="false" />
+          <Property Name="Stock" Type="float" Nullable="false" />
+          <Property Name="Stock3" Type="float" Nullable="false" />
+          <Property Name="Stock6" Type="float" Nullable="false" />
+          <Property Name="RSI" Type="float" Nullable="false" />
+          <Property Name="Tendencia" Type="float" Nullable="false" />
+          <Property Name="Volumen" Type="float" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BursatilModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BursatilEntities" p1:LazyLoadingEnabled="true" >
+          <EntitySet Name="Indices" EntityType="BursatilModel.Indices" />
+        </EntityContainer>
+        <EntityType Name="Indices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="0" />
+          <Property Type="Double" Name="Apertura" Nullable="false" />
+          <Property Type="Double" Name="Mínimo" Nullable="false" />
+          <Property Type="Double" Name="Máximo" Nullable="false" />
+          <Property Type="Double" Name="Último" Nullable="false" />
+          <Property Type="Double" Name="Stock3" Nullable="false" />
+          <Property Type="Double" Name="Stock6" Nullable="false" />
+          <Property Type="Double" Name="RSI" Nullable="false" />
+          <Property Type="Double" Name="Tendencia" Nullable="false" />
+          <Property Type="String" Name="Especie" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="Double" Name="Volumen" Nullable="false" />
+          <Property Type="Double" Name="Stock" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BursatilModelStoreContainer" CdmEntityContainer="BursatilEntities" >
+          <EntitySetMapping Name="Indices">
+            <EntityTypeMapping TypeName="BursatilModel.Indices">
+              <MappingFragment StoreEntitySet="Indices">
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+                <ScalarProperty Name="Especie" ColumnName="Especie" />
+                <ScalarProperty Name="Tendencia" ColumnName="Tendencia" />
+                <ScalarProperty Name="RSI" ColumnName="RSI" />
+                <ScalarProperty Name="Stock6" ColumnName="Stock6" />
+                <ScalarProperty Name="Stock3" ColumnName="Stock3" />
+                <ScalarProperty Name="Último" ColumnName="Último" />
+                <ScalarProperty Name="Máximo" ColumnName="Máximo" />
+                <ScalarProperty Name="Mínimo" ColumnName="Mínimo" />
+                <ScalarProperty Name="Apertura" ColumnName="Apertura" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
